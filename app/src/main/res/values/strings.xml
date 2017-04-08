@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">CommonViews</string>
+    <string name="strokeWidth">strokeWidth</string>
+    <string name="radius">radius</string>
+    <string name="radius_left_top">radius_left_top</string>
+    <string name="radius_right_top">radius_right_top</string>
+    <string name="radius_right_bottom">radius_right_bottom</string>
+    <string name="radius_left_bottom">radius_left_bottom</string>
+    <string name="selfRoundCorner">selfRoundCorner</string>
+    <string name="radio_pic">picture</string>
+    <string name="radio_color">color</string>
+    <string name="shape">shape:</string>
+    <string name="backs">background:</string>
+    <string name="backType">backFitType:</string>
+    <string name="scaleType">scaleType:</string>
+    <string name="back">back</string>
+    <string name="crop">crop</string>
+    <string name="inside">inside</string>
+
+    <string-array name="shape">
+        <item>rectangle</item>
+        <item>oval</item>
+    </string-array>
+    <string-array name="backFitType">
+        <item>back</item>
+        <item>crop</item>
+        <item>inside</item>
+    </string-array>
+    <string-array name="scaleType">
+        <item>matrix</item>
+        <item>fitXY</item>
+        <item>fitStart</item>
+        <item>fitCenter</item>
+        <item>fitEnd</item>
+        <item>center</item>
+        <item>centerCrop</item>
+        <item>centerInside</item>
+    </string-array>
+</resources>

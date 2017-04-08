@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundCornerTextView">
+        <attr name="selfRoundCorner" format="boolean" />
+        <attr name="radius" format="dimension" />
+        <attr name="radius_left_top" format="dimension" />
+        <attr name="radius_right_top" format="dimension" />
+        <attr name="radius_right_bottom" format="dimension" />
+        <attr name="radius_left_bottom" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="solidColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="shape" format="enum">
+            <enum name="rectangle" value="0"/>
+            <enum name="oval" value="1"/>
+        </attr>
+        <attr name="scaleType" format="enum">
+            <enum name="matrix" value="0"/>
+            <enum name="fitXY" value="1"/>
+            <enum name="fitStart" value="2"/>
+            <enum name="fitCenter" value="3"/>
+            <enum name="fitEnd" value="4"/>
+            <enum name="center" value="5"/>
+            <enum name="centerCrop" value="6"/>
+            <enum name="centerInside" value="7"/>
+        </attr>
+        <attr name="backgroundFitType" format="enum">
+            <enum name="back" value="0"/>
+            <enum name="crop" value="1"/>
+            <enum name="inside" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>
