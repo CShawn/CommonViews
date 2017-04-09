@@ -5,6 +5,12 @@
 ## RoundCornerTextView
 两头圆形的圆角矩形
 ```
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cs="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 <com.cshawn.commonviewslib.roundcorner.RoundCornerTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,4 +29,5 @@
         cs:backgroundFitType="inside"                 //背景图展示方式，back为背景图，crop为贴边裁剪，inside为内部填充
         cs:scaleType="fitXY"                          //图片缩放方式，同ImageView
         />
+</RelativeLayout>
 ```
