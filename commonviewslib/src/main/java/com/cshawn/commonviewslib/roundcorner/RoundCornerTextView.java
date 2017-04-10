@@ -559,6 +559,8 @@ public class RoundCornerTextView extends TextView {
         final float iwidth = mBackgroundFitType != INSIDE ? (float) vwidth : vwidth - 2 * stroke_width;
         final float iheight = mBackgroundFitType != INSIDE ? (float) vheight : vheight - 2 * stroke_width;
 
+        float offset = mBackgroundFitType != INSIDE ? 0 :stroke_width;
+
         final boolean fits = (dwidth < 0 || vwidth == dwidth)
                 && (dheight < 0 || vheight == dheight);
 
@@ -593,8 +595,8 @@ public class RoundCornerTextView extends TextView {
                     float scaleX = iwidth / vwidth;
                     float scaleY = iheight / vheight;
                     mDrawMatrix.setScale(scaleX, scaleY);
-                    mDrawMatrix.postTranslate(Math.round((vwidth - dwidth * scaleX) * 0.5f),
-                            Math.round((vheight - dheight * scaleY) * 0.5f));
+                    mDrawMatrix.postTranslate(Math.round((iwidth - dwidth * scaleX) * 0.5f+offset),
+                            Math.round((iheight - dheight * scaleY) * 0.5f+offset));
                 } else {
                     mDrawMatrix.setTranslate(Math.round((vwidth - dwidth) * 0.5f),
                             Math.round((vheight - dheight) * 0.5f));
@@ -605,15 +607,15 @@ public class RoundCornerTextView extends TextView {
                 float scale;
                 float dx = 0, dy = 0;
 
-                if (dwidth * vheight > vwidth * dheight) {
+                if (dwidth * iheight > iwidth * dheight) {
                     scale = iheight / (float) dheight;
-                    dx = (vwidth - dwidth * scale) * 0.5f;
+                    dx = (iwidth - dwidth * scale) * 0.5f;
                 } else {
                     scale = iwidth / (float) dwidth;
-                    dy = (vheight - dheight * scale) * 0.5f;
+                    dy = (iheight - dheight * scale) * 0.5f;
                 }
                 mDrawMatrix.setScale(scale, scale);
-                mDrawMatrix.postTranslate(Math.round(dx), Math.round(dy));
+                mDrawMatrix.postTranslate(Math.round(dx + offset), Math.round(dy + offset));
             } else if (CENTER_INSIDE == mScaleType) {
                 mDrawMatrix = mMatrix;
                 float scale;
@@ -627,8 +629,8 @@ public class RoundCornerTextView extends TextView {
                             iheight / (float) dheight);
                 }
 
-                dx = Math.round((vwidth - dwidth * scale) * 0.5f);
-                dy = Math.round((vheight - dheight * scale) * 0.5f);
+                dx = Math.round((iwidth - dwidth * scale) * 0.5f + offset);
+                dy = Math.round((iheight - dheight * scale) * 0.5f + offset);
                 mDrawMatrix.setScale(scale, scale);
                 mDrawMatrix.postTranslate(dx, dy);
             } else {
@@ -637,9 +639,7 @@ public class RoundCornerTextView extends TextView {
                     RectF mTempDst = new RectF(0, 0, iwidth, iheight);
                     mDrawMatrix = mMatrix;
                     mDrawMatrix.setRectToRect(mTempSrc, mTempDst,sS2FArray[mScaleType-1]);
-                    if (mBackgroundFitType == INSIDE && stroke_width > 0) {
-                        mDrawMatrix.postTranslate(stroke_width, stroke_width);
-                    }
+                    mDrawMatrix.postTranslate(offset,offset);
                 }
             }
         }
