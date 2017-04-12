@@ -135,7 +135,7 @@ public class RoundCornerTextView extends TextView {
         a.recycle();
         setStrokeColor(stroke_colors != null ? stroke_colors : ColorStateList.valueOf(getCurrentTextColor()));
         setSolidColor(solid_colors != null ? solid_colors : ColorStateList.valueOf(Color.TRANSPARENT));
-        mDrawable=getBackground();
+        mDrawable = getBackground();
 
         configureBounds();
     }
@@ -311,49 +311,16 @@ public class RoundCornerTextView extends TextView {
     }
 
     @Override
-    public void setBackground(Drawable background) {
-        super.setBackground(background);
-        updateBackground();
-    }
-
-    @Override
-    public void setBackgroundColor(@ColorInt int color) {
-        super.setBackgroundColor(color);
-        updateBackground();
-    }
-
-    @Override
-    public void setBackgroundResource(@DrawableRes int resid) {
-        super.setBackgroundResource(resid);
-        updateBackground();
-    }
-
-    @Override
     public void setBackgroundDrawable(Drawable background) {
         super.setBackgroundDrawable(background);
-        updateBackground();
-    }
-
-    @Override
-    public void setBackgroundTintList(@Nullable ColorStateList tint) {
-        super.setBackgroundTintList(tint);
-        updateBackground();
-    }
-
-    @Override
-    public void setBackgroundTintMode(@Nullable PorterDuff.Mode tintMode) {
-        super.setBackgroundTintMode(tintMode);
         updateBackground();
     }
 
     private void updateBackground() {
         if (!clearBackground) {
             mDrawable = getBackground();
-            if (getBackground() == null) {
-                setBackgroundColor(Color.TRANSPARENT);
-            }
+            invalidate();
         }
-        invalidate();
     }
 
     @Override
@@ -523,18 +490,20 @@ public class RoundCornerTextView extends TextView {
             int width;
             int height;
             if (widthMode == MeasureSpec.AT_MOST) {
-                width=Math.max(getWidth(),mDrawable.getIntrinsicWidth());
                 if (mBackgroundFitType == INSIDE && stroke_width > 0) {
-                    width += 2 * stroke_width;
+                    width = Math.max(getWidth(), Math.round(mDrawable.getIntrinsicWidth() + 2*stroke_width));
+                } else {
+                    width=Math.max(getWidth(),mDrawable.getIntrinsicWidth());
                 }
                 width = Math.min(width, widthSize);
             }else {
                 width = widthSize;
             }
             if (heightMode == MeasureSpec.AT_MOST) {
-                height=Math.max(getHeight(),mDrawable.getIntrinsicHeight());
                 if (mBackgroundFitType == INSIDE && stroke_width > 0) {
-                    height += 2 * stroke_width;
+                    height = Math.max(getHeight(), Math.round(mDrawable.getIntrinsicHeight() + 2 * stroke_width));
+                } else {
+                    height=Math.max(getHeight(),mDrawable.getIntrinsicHeight());
                 }
                 height = Math.min(height, heightSize);
             }else {
