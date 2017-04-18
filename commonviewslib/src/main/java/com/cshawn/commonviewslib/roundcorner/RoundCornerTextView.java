@@ -14,7 +14,6 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.FloatRange;
 import android.support.annotation.IntDef;
 import android.support.annotation.IntRange;
@@ -278,7 +277,7 @@ public class RoundCornerTextView extends TextView {
 
     /**
      * 是否自定义圆角半径
-     * @param self
+     * @param self 为true时，使用自定义的radius
      */
     public void setSelfRoundCorner(boolean self) {
         this.self_round_corner = self;
