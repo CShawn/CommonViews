@@ -2,6 +2,8 @@
 一些常用的自定义控件
 ## 使用
 依赖aar->compile project(':commonviewslib')
+或
+compile 'com.cshawn:CommonViews:1.0.0'
 ## RoundCornerTextView
 两头圆形的圆角矩形
 ```
