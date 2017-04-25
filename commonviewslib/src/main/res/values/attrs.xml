@@ -2,7 +2,7 @@
 <resources>
     <declare-styleable name="RoundCornerTextView">
         <attr name="selfRoundCorner" format="boolean" />
-        <attr name="radius" format="dimension" />
+        <attr name="selfRadius" format="dimension" />
         <attr name="radius_left_top" format="dimension" />
         <attr name="radius_right_top" format="dimension" />
         <attr name="radius_right_bottom" format="dimension" />

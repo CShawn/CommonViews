@@ -17,7 +17,7 @@
         cs:solidColor="@color/solid_color_selector"
         cs:strokeWidth="5dp"
         cs:strokeColor="@color/stroke_color_selector"
-        cs:radius="30dp"
+        cs:selfRadius="30dp"
         cs:radius_right_top="100dp"
         cs:radius_right_bottom="0dp"
         cs:selfRoundCorner="false"

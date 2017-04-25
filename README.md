@@ -3,7 +3,7 @@
 ## 使用
 依赖aar->compile project(':commonviewslib')
 或
-compile 'com.cshawn:CommonViews:1.0.0'
+compile 'com.cshawn:CommonViews:1.0.3'
 ## RoundCornerTextView
 两头圆形的圆角矩形
 ```
@@ -23,7 +23,7 @@ compile 'com.cshawn:CommonViews:1.0.0'
         cs:solidColor="@color/solid_color_selector"   //填充色
         cs:strokeWidth="5dp"                          //描边宽度
         cs:strokeColor="@color/stroke_color_selector" //描边颜色
-        cs:radius="30dp"                              //圆角半径
+        cs:selfRadius="30dp"                              //圆角半径
         cs:radius_right_top="100dp"                   //右上角圆角半径
         cs:radius_right_bottom="0dp"                  //右下角圆角半径
         cs:selfRoundCorner="false"                    //是否自定义圆角半径，true时上边三个值才会生效，false时显示为正常圆角矩形

@@ -113,7 +113,7 @@ public class RoundCornerTextView extends TextView {
         stroke_width = a.getDimensionPixelSize(R.styleable.RoundCornerTextView_strokeWidth,0);
         self_round_corner = a.getBoolean(R.styleable.RoundCornerTextView_selfRoundCorner,false);
         if (self_round_corner) {
-            corner_radius = a.getDimensionPixelSize(R.styleable.RoundCornerTextView_radius,0);
+            corner_radius = a.getDimensionPixelSize(R.styleable.RoundCornerTextView_selfRadius,0);
             radius_left_top = a.getDimensionPixelSize(R.styleable.RoundCornerTextView_radius_left_top,-1);
             if (radius_left_top < 0) {
                 radius_left_top = corner_radius;
